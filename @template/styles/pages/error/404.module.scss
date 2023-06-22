@@ -1,0 +1,81 @@
+.erro404 {
+  position: relative;
+  @include media("<tablet") {
+    border-top: 20px solid #0036b3;
+  }
+  @include media(">=tablet") {
+    height: 100vh;
+    border-right: 32px solid #0036b3;
+  }
+}
+
+.erro404_content {
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  h1 {
+    @include size(65, 70);
+  }
+  p {
+    @include size(16, 22);
+    margin: rem(28) 0 rem(32) 0;
+    text-align: center;
+    max-width: rem(225);
+  }
+  img {
+    width: rem(109);
+    height: auto;
+  }
+  @include media(">=phone") {
+    h1 {
+      @include size(150, 150);
+    }
+    p {
+      @include size(24, 32);
+      margin: rem(28) 0 rem(40) 0;
+      max-width: 100%;
+    }
+    img {
+      width: rem(300);
+      height: auto;
+    }
+  }
+  @include media(">=tablet") {
+    max-width: 65%;
+    p {
+      @include size(24, 32);
+      margin: rem(28) 0 rem(40) 0;
+      max-width: 100%;
+    }
+    img {
+      width: rem(467);
+      height: auto;
+    }
+  }
+}
+
+.erro404_aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include media("<tablet") {
+    img {
+      object-fit: cover;
+      width: 100vw;
+      max-height: rem(160);
+    }
+  }
+  @include media(">=tablet") {
+    flex-direction: 1 1 100%;
+    max-width: 35%;
+    height: 100vh;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

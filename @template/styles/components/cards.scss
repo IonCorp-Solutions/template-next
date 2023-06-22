@@ -1,0 +1,95 @@
+.card {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gray-color);
+  border-radius: 8px;
+  border: solid 1px var(--gray-two-color);
+  position: relative;
+  &--product {
+    width: auto;
+    max-width: rem(224);
+    background: var(--white-color);
+  }
+}
+
+.card__tag {
+  @include size(10, 12);
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  color: var(--primary-color);
+  font-weight: var(--medium);
+  padding: rem(8) rem(12);
+  position: absolute;
+  top: rem(10);
+  left: rem(10);
+  z-index: 1;
+
+  @include media(">=tablet") {
+    @include size(14, 20);
+    padding: rem(6) rem(24);
+    top: rem(24);
+    left: rem(24);
+  }
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  img {
+    width: 100%;
+    height: rem(148) !important;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  @include media(">=phone") {
+    img {
+      height: rem(152) !important;
+    }
+  }
+  @include media(">=tablet") {
+    img {
+      height: rem(192) !important;
+    }
+  }
+}
+
+.card__content {
+  padding: rem(16) rem(12) rem(15) rem(12);
+  h4 {
+    @include size(12, 18);
+    font-weight: var(--regular);
+    margin-bottom: rem(8);
+    color: var(--text-color);
+  }
+  h3 {
+    @include size(14, 16);
+    font-weight: var(--bold);
+    margin-bottom: rem(8);
+    @include media(">=tablet") {
+      @include size(16, 22);
+      margin-bottom: rem(16);
+    }
+  }
+  p {
+    @include size(12, 16);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    font-weight: var(--regular);
+    margin-bottom: rem(37);
+    @include media(">=tablet") {
+      @include size(16, 22);
+      margin-bottom: rem(28);
+    }
+  }
+  @include media(">=tablet") {
+    padding: rem(31) rem(24) rem(24) rem(24);
+  }
+}

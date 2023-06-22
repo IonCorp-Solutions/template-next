@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+}
+
+.table__tr {
+  border: solid 2px #e5e5e5;
+  cursor: default;
+}
+
+.table__td,
+.table__th {
+  padding: rem(5) 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.table__th {
+  @include size(18, 20);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  max-width: rem(60);
+  padding-left: rem(20);
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.table__td {
+  // text-align: left;
+  @include size(16, 24);
+}
+
+.table__body {
+  .table__tr {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

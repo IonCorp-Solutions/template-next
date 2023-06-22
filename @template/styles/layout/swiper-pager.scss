@@ -1,0 +1,17 @@
+.swiper {
+  &-pager {
+    text-align: center;
+    margin: 15px 0 0;
+    position: relative;
+
+    span {
+      background-color: var(--gray-three-color);
+      margin: 0 5px !important;
+
+      &.swiper-pagination-bullet-active {
+        background-color: var(--primary-color);
+        transform: scale(1.2);
+      }
+    }
+  }
+}

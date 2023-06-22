@@ -1,0 +1,140 @@
+@use 'sass:math';
+
+%cover {
+  width: 100%;
+  position: relative;
+}
+
+%center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%inline-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%abs-center {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@mixin ps-absolute($z-index: 1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index;
+}
+
+@mixin fixed($z-index: 1) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index;
+}
+
+@mixin rootColors($colors) {
+  :root {
+
+    @each $name,
+    $color in $colors {
+      #{$name}: #{$color};
+    }
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin size($size, $height: 0) {
+  font-size: rem($size);
+
+  @if $height>0 {
+    line-height: #{math.div($height, $size)}em;
+    // line-height: #{$height / $base-font-size}rem;
+  }
+}
+
+@mixin offset($side, $size) {
+  @if $size>0 {
+    margin-#{$side}: #{$size / $base-font-size}rem;
+  }
+}
+
+@mixin scrollbar() {
+
+  /* Targtes on Chrome, Edge, and Safari */
+  &::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--white-color);
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: auto;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @include media('>tablet') {
+      @content;
+    }
+  }
+}
+
+@mixin headline($tag, $weight, $size, $color, $offsetBottom: 0) {
+  #{$tag} {
+    @include size($size, $size + 2);
+    font-weight: var($weight);
+    color: var($color);
+
+    @if ($offsetBottom > 0) {
+      margin-bottom: #{math.div($offsetBottom, $base-font-size)}rem;
+    }
+  }
+}
+
+@mixin top-flag($height: 8px) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background: var(--primary-color);
+    border-radius: 8px 8px 0 0;
+  }
+}

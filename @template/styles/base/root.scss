@@ -1,0 +1,135 @@
+/* This will work on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--gray-surface);
+}
+
+/* Targtes on Chrome, Edge, and Safari */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white-color);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 1px;
+}
+
+/**
+ * root
+ */
+
+:root {
+  --font-size: 12.44px;
+
+  /**
+    Small devices (landscape phones, 320px and up)
+
+    screen = media screen
+    base-screen = default board figma (desktop 1440px and mobile 360px)
+    base-font = default font size (14px)
+
+    --font-size = ( ( (screen * 100) / base-screen ) * base-font ) / 100
+
+    @var $breakpoints: ()
+  */
+
+  $sizes: (
+    "320px": 12.44,
+    "360px": 14,
+    // "375px": 14.58,
+    // "390px": 15.17,
+    "425px": 16.53,
+    "576px": 14,
+    "768px": 14,
+    "1024px": 10,
+    "1200px": 11.67,
+    "1280px": 12.44,
+    "1366px": 13.28,
+    "1440px": 14,
+  );
+
+  @each $name, $size in $sizes {
+    @include media(">=#{$name}") {
+      --font-size: #{$size}px;
+    }
+  }
+}
+
+/**
+ * global styles
+ */
+html,
+body {
+  font-size: var(--font-size);
+  // line-height: 22.4px;
+  line-height: 1.6;
+  width: 100%;
+
+  // Dinamic vars
+  --navbar-height: 72px;
+  --navbar-top: 72px;
+
+  @include media(">=phone") {
+    --navbar-height: 84px;
+    --navbar-top: 84px;
+  }
+
+  @include media(">=tablet") {
+    --navbar-height: #{rem(100)};
+    --navbar-top: #{rem(100 + 32)};
+  }
+
+  &.is-show-download {
+    --navbar-top: 122px;
+
+    @include media(">=phone") {
+      --navbar-top: 134px;
+    }
+
+    @include media(">=tablet") {
+      --navbar-top: #{rem(100 + 32)};
+    }
+  }
+}
+
+body {
+  color: var(--text-color);
+  counter-reset: section;
+  font-family: var(--font);
+  font-weight: var(--regular);
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  width: 100%;
+}
+
+/**
+ * container
+ */
+.container {
+  @extend %section__wrapper;
+}
+
+/**
+ * commons
+ */
+.card__image {
+  span {
+    display: block !important;
+  }
+}

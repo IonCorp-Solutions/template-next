@@ -1,0 +1,40 @@
+%section {
+  width: 100%;
+}
+
+%section__fluid {
+  @extend %side-padding;
+  width: 100%;
+}
+
+%section__wrapper {
+  @extend %side-padding;
+
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  // @include media('>=1200px') {
+  //   max-width: 1140px;
+  // }
+
+  // @include media('>=1400px') {
+  //   max-width: 1320px;
+  // }
+}
+
+%side-padding {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include media(">=phone") {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include media(">=tablet") {
+    padding-left: rem(128);
+    padding-right: rem(128);
+  }
+}

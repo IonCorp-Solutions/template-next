@@ -1,0 +1,54 @@
+.consultation-topBar {
+  background: var(--white-color);
+
+  svg {
+    width: 100%;
+  }
+}
+
+.consultation {
+  position: relative;
+  height: rem(170);
+  background: var(--primary-color);
+}
+
+.consultation__wrapper {
+  @extend %section__wrapper;
+  z-index: 1;
+  height: 100%;
+}
+
+.consultation__ellipse {
+  position: absolute;
+  width: 100%;
+  max-height: rem(229);
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.consultation__content {
+  @extend %center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  justify-content: center;
+}
+
+.consultation__paragraph {
+  margin-bottom: rem(24);
+  position: relative;
+  color: var(--white-color);
+  @include size(18, 22);
+
+  @include media(">=tablet") {
+    @include size(24, 29);
+  }
+}

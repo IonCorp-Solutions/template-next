@@ -1,0 +1,18 @@
+%paragraph-14 {
+  @include size(14);
+  line-height: 150%;
+
+  @include media(">=tablet") {
+    @include size(16);
+  }
+}
+
+%section-paragraph {
+  @include size(14, 20);
+  color: var(--light-grey-color);
+  font-weight: var(--medium);
+
+  @include media(">=tablet") {
+    @include size(16, 22);
+  }
+}

@@ -1,0 +1,20 @@
+@use "sass:math";
+
+%title-14 {
+  @include size(14, 16);
+
+  @include media(">=tablet") {
+    @include size(18, 20);
+  }
+}
+
+%section-title {
+  @include size(28, 35);
+  color: var(--dark-grey-color);
+  text-align: center;
+  font-weight: var(--bold);
+
+  @include media(">=tablet") {
+    @include size(36, 45);
+  }
+}

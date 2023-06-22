@@ -1,0 +1,31 @@
+@use "sass:math";
+
+@function rem($size) {
+  @return #{math.div($size, $base-font-size)}rem;
+}
+
+@function calc-rem($size) {
+  @return math.div($size, $base-font-size);
+}
+
+@function line-height($size, $height) {
+  @return #{math.div($height, $size)}em;
+}
+
+@function set-font($name) {
+  @return url("/fonts/#{$name}");
+}
+
+@function set-img($name) {
+  @return url("/assets/#{$name}") no-repeat;
+}
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; Choose one of: #{$z-indexes}';
+
+    @return null;
+  }
+}

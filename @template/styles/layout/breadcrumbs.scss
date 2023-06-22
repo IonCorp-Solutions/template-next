@@ -1,0 +1,40 @@
+.breadcrumbs {
+  width: 100%;
+  padding: 25px 0;
+
+  &.offset_top {
+    margin: var(--navbar-height) 0 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 2px;
+
+    &:empty {
+      &:before {
+        content: '/';
+        display: inline-block;
+        color: var(--light-grey-color);
+      }
+    }
+
+    &:last-of-type {
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    color: var(--light-grey-color);
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  span {
+    color: var(--primary-color);
+  }
+}

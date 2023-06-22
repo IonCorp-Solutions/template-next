@@ -1,0 +1,127 @@
+.btn {
+  @include size(14, 17);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: var(--medium);
+  text-decoration: none;
+  padding: rem(15) rem(18);
+  border-radius: rem(56);
+  border: 1px solid transparent;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: var(--gray-two-color);
+    border-color: var(--gray-two-color);
+    color: var(--gray-four-color);
+  }
+}
+
+.btn-medium {
+  @extend .btn;
+  @include size(16, 20);
+  padding: rem(15) rem(24);
+}
+
+.btn-large {
+  @extend .btn;
+  @include size(16, 20);
+  padding: rem(17) rem(36);
+
+  @include media(">=tablet") {
+    padding: rem(17) rem(32);
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transition: color var(--def-transition-300ms),
+    background-color var(--def-transition-300ms);
+}
+
+.btn-primary-icon {
+  padding: rem(12) rem(18) rem(12) rem(10);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  white-space: nowrap;
+
+  i {
+    margin-right: rem(8);
+  }
+
+  @include media("<tablet") {
+    font-weight: var(--regular);
+
+    i {
+      margin-right: rem(6);
+    }
+  }
+
+  @include media(">=tablet") {
+    padding: rem(12) rem(20) rem(12) rem(13);
+  }
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transition: color var(--def-transition-300ms),
+    background-color var(--def-transition-300ms);
+
+  @include hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+  }
+
+  &.is-active {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+  }
+}
+
+.btn-white {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-weight: var(--semi-bold);
+}
+
+.btn-blue {
+  background-color: var(--blue-ribbon-color);
+  color: var(--white-color);
+  transition: color var(--def-transition-300ms),
+    background-color var(--def-transition-300ms);
+}
+
+.btn-outline-blue {
+  background-color: transparent;
+  border-color: var(--blue-ribbon-color);
+  color: var(--blue-ribbon-color);
+  transition: color var(--def-transition-300ms),
+    background-color var(--def-transition-300ms);
+
+  @include hover {
+    color: var(--white-color);
+    background-color: var(--blue-ribbon-color);
+  }
+
+  &.is-active {
+    color: var(--white-color);
+    background-color: var(--blue-ribbon-color);
+  }
+}
+
+.btn-icon {
+  @extend %inline-center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}

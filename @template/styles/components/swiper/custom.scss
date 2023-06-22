@@ -1,0 +1,34 @@
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+section[data-name="pay-swiper"] {
+  .pay-swiper-page {
+    bottom: auto;
+    margin-top: rem(20);
+  }
+
+  .swiper-slide {
+    height: auto;
+    width: 100%;
+
+    @include media(">=phone-576") {
+      width: 60%;
+    }
+
+    @include media(">=phone") {
+      width: 40%;
+    }
+
+    @include media(">=tablet") {
+      width: 70%;
+    }
+  }
+}

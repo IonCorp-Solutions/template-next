@@ -1,0 +1,11 @@
+.pre-modal {
+  display: flex;
+  align-items: center;
+
+  &--text {
+    max-width: 290px;
+    @include size(20, 24);
+    font-weight: var(--medium);
+    margin-right: rem(48);
+  }
+}

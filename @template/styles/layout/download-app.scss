@@ -1,0 +1,57 @@
+.download-app {
+  width: 100%;
+  background-color: var(--alabaster-color);
+
+  @include media(">=tablet") {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.is-hidden {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.download-app__wrapper {
+  display: flex;
+  align-items: center;
+  padding: rem(2) rem(10);
+  min-height: 50px;
+}
+
+.download-app__close {
+  flex: 1 1 100%;
+  width: 16px;
+  height: 16px;
+  max-width: 16px;
+}
+
+.download-app__content {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: rem(12);
+}
+
+.download-app__title {
+  @include size(12, 14);
+  color: var(--black-color);
+  font-weight: var(--bold);
+  margin-bottom: rem(2);
+}
+
+.download-app__text {
+  @include size(12, 14);
+  color: var(--light-grey-color);
+}
+
+.download-app__btn {
+  @include size(14, 17);
+  color: var(--primary-color);
+  font-weight: var(--medium);
+  padding: rem(4);
+}

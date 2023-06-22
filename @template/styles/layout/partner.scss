@@ -1,0 +1,26 @@
+.partner {
+  background: var(--white-color);
+  background: #f8f8f8;
+}
+
+.partner__wrapper {
+  @extend %section__wrapper;
+  padding: rem(40) 0;
+  p {
+    @include size(14, 17);
+    color: var(--gray-four-color);
+    font-weight: var(--regular);
+    margin-right: rem(12);
+  }
+  @include media(">=tablet") {
+    padding: rem(64) 0;
+    p {
+      @include size(18, 21);
+      margin-right: rem(16);
+    }
+  }
+}
+
+.partner__paragraph {
+  @extend %center;
+}

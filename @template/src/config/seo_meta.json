@@ -1,0 +1,12 @@
+{
+  "title": "template",
+  "titleTemplate": "%s - template",
+  "description": "This is a template",
+  "openGraph": {
+    "title": "template",
+    "description": "This is a template",
+    "type": "website",
+    "url": "",
+    "site_name": "template"
+  }
+}
